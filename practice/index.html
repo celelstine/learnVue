@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>learn_vue</title>
+    <script src="https://unpkg.com/vue"></script>
+
+  </head>
+  <body>
+
+   <div id="app">
+	  <p> {{ salutation }} </p>
+	  <p> <span v-once>This will never change: {{ salutation | capitalize  }}</span> </p>
+	  <p>  <input v-model="salutation"> </p>
+	  <button v-on:click="reverseMessage">Reverse salutation</button>
+	  <br />	
+	   <span v-bind:title="message | capitalize ">
+	    Hover your mouse over me for a few seconds to see my dynamically bound title!
+	  </span>
+	  <p v-if="seen">Now you see me</p>
+
+	   <ol>
+	    <li v-for="todo in todos">
+	      {{ todo.text }}
+	    </li>
+	  </ol>
+	  <ul>
+	  	<todo-item
+		  	v-for="item in groceryList"
+	      v-bind:todo="item"
+	      v-bind:key="item.id">
+      </todo-item>
+	  </ul>
+	  <div v-html="rawHtml"></div>
+		</div>
+		<div id="demo">{{ fullName }}</div>
+		<script type="text/javascript" src="index.js" >	</script>
+    <!-- built files will be auto injected -->
+  </body>
+
+</html>

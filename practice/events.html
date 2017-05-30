@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>learn_vue</title>
+    <script src="https://unpkg.com/vue"></script>
+
+  </head>
+  <body>
+
+   <div id="app">
+   	<button v-on:click="counter += 1">Add 1</button>
+  	<p>The button above has been clicked {{ counter }} times.</p>
+
+  	<button v-on:click="greet">Greet</button>
+  	<button v-on:click="say('hi')">Say hi</button>
+  	<a v-on:click.once="say('hi')">say hi once</a>
+  	<div @click.ctrl="greet">Hold the control key and click</div>
+
+  	<span>Multiline message is:</span>
+		<p style="white-space: pre">{{ message }}</p>
+		<br>
+		<textarea v-model="message" placeholder="add multiple lines"></textarea>
+
+		<br />
+		<h3> check box binding </h3>
+		<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+		<label for="jack">Jack</label>
+		<input type="checkbox" id="john" value="John" v-model="checkedNames">
+		<label for="john">John</label>
+		<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+		<label for="mike">Mike</label>
+		<br>
+		<span>Attendees: {{ checkedNames }}</span>
+
+		<h3> Radio button binding</h3>
+		<input type="radio" id="one" value="One" v-model="picked">
+		<label for="one">One</label>
+		<br>
+		<input type="radio" id="two" value="Two" v-model="picked">
+		<label for="two">Two</label>
+		<br>
+		<span>Picked: {{ picked }}</span>
+
+		<h3> select binding <h3>
+		<select v-model="selected" multiple>
+		  <option disabled value="">Please select one</option>
+		  <option>A</option>
+		  <option>B</option>
+		  <option>C</option>
+		</select>
+		<span>Selected: {{ selected }}</span>
+
+   </div>
+   <script type="text/javascript" src="events.js" >	</script>
+    <!-- built files will be auto injected -->
+  </body>
+
+</html>
